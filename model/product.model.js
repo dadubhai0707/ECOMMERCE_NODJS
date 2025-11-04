@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const ApiError = require("../utils/apiError")
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
     Category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category",
