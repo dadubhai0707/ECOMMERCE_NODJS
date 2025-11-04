@@ -25,13 +25,15 @@ const userSchema = mongoose.Schema(
             type: String,
             required: true,
             min: [6, "Password Min Length 6 < 8"],
-            max: [8, "Password Min Length 6 < 8"]
+            max: [8, "Password Min Length 6 < 8"],
+            select: false
         },
         Gender: {
             type: String,
             enum: ["Male", "Female", "Other"],
             required: true
         },
+
         Address: {
             Country: {
                 type: String,
@@ -62,7 +64,7 @@ const userSchema = mongoose.Schema(
             type: String
         }
     },
-    { timeStamps: true }
+    { timestamps: true }
 )
 
 const User = mongoose.model("User", userSchema)
