@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { dummyProducts } from "../User/Component/DumpProduct";
 import { ShoppingCart, Heart, Share2, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-
+import ProductCard from "../User/Component/Product";
 const PDP = () => {
   const { slug } = useParams();
   const [selectedImage, setSelectedImage] = useState(0);
@@ -186,12 +186,12 @@ const PDP = () => {
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">You May Also Like</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* {dummyProducts
+          {dummyProducts
             .filter((p) => p._id !== product._id)
             .slice(0, 4)
             .map((p) => (
               <ProductCard key={p._id} product={p} />
-            ))} */}
+            ))}
         </div>
       </div>
     </div>
