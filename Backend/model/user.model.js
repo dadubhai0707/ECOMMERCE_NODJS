@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema(
             required: true
         },
 
-        Address: {
+        Address: [{
             Country: {
                 type: String,
                 required: true
@@ -60,7 +60,7 @@ const userSchema = new mongoose.Schema(
                 type: String,
                 required: true
             }
-        },
+        }],
         RefreshToken: {
             type: String
         }
