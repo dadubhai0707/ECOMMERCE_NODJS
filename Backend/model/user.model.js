@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema(
                 type: String,
                 required: true
             },
-            district: {
+            District: {
                 type: String,
                 require: true
             },

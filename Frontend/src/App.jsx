@@ -1,15 +1,30 @@
 import { BrowserRouter, Routes, Navigate, Route } from "react-router-dom";
 import Main from "./page/User/Main";
+import Mains from "./page/Auth/main";
 import Home from "./page/User/Home";
 import Cart from "./page/User/Cart";
 import Order from "./page/User/Order";
 import Profile from "./page/User/Profile";
 import PDP from "./page/User/PDP";
+import UserRegister from "./page/Auth/UserForms/UserRegister";
+import UserLogin from "./page/Auth/UserForms/UserLogin";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* --------------------------------------------- */}
+        {/* User Route */}
+        {/* --------------------------------------------- */}
+        <Route path="/auth" element={<Mains />}>
+          <Route index element={<Navigate to="register" />} />
+          <Route path="register" element={<UserRegister />} />
+          <Route path="login" element={<UserLogin />} />
+        </Route>
+        {/* --------------------------------------------- */}
+        {/* User Route */}
+        {/* --------------------------------------------- */}
         <Route path="/user" element={<Main />}>
           <Route index element={<Navigate to="home" />} />
           <Route path="home" element={<Home />} />

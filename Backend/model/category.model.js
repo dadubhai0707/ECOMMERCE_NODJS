@@ -26,7 +26,6 @@ const categorySchema = new mongoose.Schema({
 )
 
 categorySchema.pre("save", function (next) {
-    // this function for when in Category Name is "Electronic Phone"  the Convert into "electronic-phone"
     if (this.isModified("Name")) {
         this.Slug = this.Name.toLowerCase().replace(/\s+/g, "-");
     }
